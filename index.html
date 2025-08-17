@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Bot Watson</title>
+</head>
+<body>
+  <h1>Bienvenido a mi Bot</h1>
+  <p>Haz clic en el ícono abajo a la derecha para chatear 👇</p>
+
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "018aa681-0d8a-46e5-a97a-172f58713e46",
+      region: "us-south",
+      serviceInstanceID: "3ef43c3c-c364-4a48-a829-69b3419c7a9f",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+        (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
