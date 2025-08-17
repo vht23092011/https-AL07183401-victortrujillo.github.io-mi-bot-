@@ -2,17 +2,81 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Bot Watson</title>
+  <style>
+    /* --- Reset básico --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 40px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: white;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a mi Bot</h1>
-  <p>Haz clic en el ícono abajo a la derecha para chatear 👇</p>
+  <div class="card">
+    <h1>🤖 Bienvenido a mi Bot</h1>
+    <p>Haz clic en el ícono de chat abajo a la derecha para conversar conmigo.</p>
+  </div>
 
+  <footer>
+    Desarrollado con ❤️ usando IBM Watson Assistant
+  </footer>
+
+  <!-- Script de IBM Watson Assistant -->
   <script>
     window.watsonAssistantChatOptions = {
-      integrationID: "018aa681-0d8a-46e5-a97a-172f58713e46",
-      region: "us-south",
-      serviceInstanceID: "3ef43c3c-c364-4a48-a829-69b3419c7a9f",
+      integrationID: "018aa681-0d8a-46e5-a97a-172f58713e46", // Tu integrationID
+      region: "us-south", // Región
+      serviceInstanceID: "3ef43c3c-c364-4a48-a829-69b3419c7a9f", // Tu serviceInstanceID
       onLoad: async (instance) => { await instance.render(); }
     };
     setTimeout(function(){
